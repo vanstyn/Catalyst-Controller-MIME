@@ -2,7 +2,7 @@ package Catalyst::Controller::MIME;
 use strict;
 use warnings;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 use Moose;
 use namespace::autoclean;
@@ -13,8 +13,6 @@ use Catalyst::Utils;
 use HTML::TokeParser::Simple;
 use HTML::Entities;
 use Data::Dumper::Concise 'Dumper';
-use RapidApp::Include qw(sugar perlutil);
- 
 
 # ---
 # Supply code to obtain the MIME object via either coderef attr or
@@ -487,7 +485,7 @@ defined, the real get_mime method will be ignored.
 Bool option for debug purposes. Allows calling methods on the Email::MIME object directly and dumping the
 output. For example:
 
-  # Dump the output of C<$MIME->debug_structure()> for id '1234'
+  # Dump the output of $MIME->debug_structure() for id '1234'
   http://localhost:3000/mimeview/method/debug_structure/1234/
 
 Defaults to false (0).
